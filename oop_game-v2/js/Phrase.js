@@ -26,12 +26,17 @@
          //   }
          // }
          for(let i = 0; i < this.phrase.length; i++){
+           let letter = this.phrase.charAt(i);
            console.log(this.phrase.charAt(i));
-           let letter = this.phrase.charAt(i)
+           var li = document.createElement("li");
            letter.style.display = 'none';
-             if() {
-
+             if(letter = " ") {
+                letter.className = "hide letter";
+             } else {
+                letter.className = "space";
              }
+        
+             li.appendChild(letter);
          }
     }
 
