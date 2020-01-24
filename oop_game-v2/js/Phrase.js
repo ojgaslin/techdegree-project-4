@@ -41,7 +41,7 @@
             // }
 
              ul.appendChild(li);
-             li.style.display = 'none';
+             li.display = 'none';
          }
     }
 
