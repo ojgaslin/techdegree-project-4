@@ -25,18 +25,23 @@
          //       li.className = space;
          //   }
          // }
+         var div = document.createElement("div");
+         var ul = document.createElement("ul");
+         div.appendChild(ul);
          for(let i = 0; i < this.phrase.length; i++){
-           let letter = this.phrase.charAt(i);
-           console.log(this.phrase.charAt(i));
            var li = document.createElement("li");
-           letter.style.display = 'none';
-             if(letter = " ") {
-                letter.className = "hide letter";
-             } else {
-                letter.className = "space";
-             }
-        
-             li.appendChild(letter);
+           li.innerHTML = this.phrase.charAt(i);
+           //let letter = "<li>" + this.phrase.charAt(i) + "</li>";
+           console.log(li.innerHTML);
+
+             //if(letter = " ") {
+            //    letter.className = "hide letter";
+            // } else {
+            //    letter.className = "space";
+            // }
+
+             ul.appendChild(li);
+             li.style.display = 'none';
          }
     }
 
