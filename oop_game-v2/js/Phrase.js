@@ -34,10 +34,11 @@
            //let letter = "<li>" + this.phrase.charAt(i) + "</li>";
            console.log(li.innerHTML);
 
-             //if(letter = " ") {
-            //    letter.className = "hide letter";
+             //if(li === " ") {
+            //    li.className = "space";
             // } else {
-            //    letter.className = "space";
+                  //li.className = "hide letter";
+            //
             // }
 
              ul.appendChild(li);
