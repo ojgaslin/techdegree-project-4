@@ -10,7 +10,7 @@
 //phrases property here calls create phrases method
       this.phrases = this.createPhrases();
 //phrase object that is currently being played
-      this.activePhrase = this.phrase;
+      this.activePhrase = 'null';
 
     }
     /**
@@ -37,8 +37,13 @@ getRandomPhrase() {
     * Begins game by selecting a random phrase and displaying it to user
     */
    startGame() {
-       document.querySelector('#overlay div').hide();
-       getRandomPhrase();
-       addPhraseToDisplay();
+       document.querySelector('#overlay').style.display = 'none';
+
+       this.activePhrase = this.getRandomPhrase();
+       this.activePhrase.addPhraseToDisplay();
+
+       //document.querySelector('#overlay div').hide();
+
    }
+
  }

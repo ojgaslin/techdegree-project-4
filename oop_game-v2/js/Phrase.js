@@ -26,7 +26,7 @@
             }
 //li element is appended to ul which already exists and has the id phrase
              document.querySelector('#phrase ul').appendChild(li);
-             li.display = 'none';
+          
          }
     }
 
