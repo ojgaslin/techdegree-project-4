@@ -10,38 +10,19 @@
 */
 
     addPhraseToDisplay() {
-
-         //    for (i = str.charAt(0); i < str.length, i++) {
-         //   if(i = " ") {
-         //     li.className = space;
-         //   } else {
-         //     var ul = document.createElement("ul");
-         //     ul.className = "section";
-         //     ul.id = "phrase";
-         //     var li = document.createElement("li");
-         //     li.className = "hide letter";
-         //     var letter = document.createTextNode(new Phrase[i]);
-         //     li.appendChild(letter);
-         //       li.className = space;
-         //   }
-         // }
-         var div = document.createElement("div");
-         var ul = document.createElement("ul");
-         div.appendChild(ul);
-         for(let i = 0; i < this.phrase.length; i++){
+       for(let i = 0; i < this.phrase.length; i++){
            var li = document.createElement("li");
            li.innerHTML = this.phrase.charAt(i);
            //let letter = "<li>" + this.phrase.charAt(i) + "</li>";
-           console.log(li.innerHTML);
+           console.log(li);
 
-             //if(li === " ") {
-            //    li.className = "space";
-            // } else {
-                  //li.className = "hide letter";
-            //
-            // }
+             if(li.innerHTML === " ") {
+               li.className = "space";
+             } else {
+                  li.className = "hide letter " + li.innerHTML;
+            }
 
-             ul.appendChild(li);
+             document.querySelector('#phrase ul').appendChild(li);
              li.display = 'none';
          }
     }
