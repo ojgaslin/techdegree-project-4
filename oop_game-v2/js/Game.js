@@ -42,8 +42,6 @@ getRandomPhrase() {
        this.activePhrase = this.getRandomPhrase();
        this.activePhrase.addPhraseToDisplay();
 
-       //document.querySelector('#overlay div').hide();
-
    }
 
  }
