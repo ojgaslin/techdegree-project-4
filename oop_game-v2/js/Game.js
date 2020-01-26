@@ -37,10 +37,42 @@ getRandomPhrase() {
     * Begins game by selecting a random phrase and displaying it to user
     */
    startGame() {
+  //hides start screen overlay on div element
        document.querySelector('#overlay').style.display = 'none';
-
+//this.activePhrase equal to this.getRandomPhrase to call this method
        this.activePhrase = this.getRandomPhrase();
+//this.activePhrase used again to call method in phrase.js file
        this.activePhrase.addPhraseToDisplay();
+
+   }
+   /**
+   * Checks for winning move
+   * @return {boolean} True if game has been won, false if game wasn't
+   won
+   */
+checkForWin() {
+
+
+   };
+   /**
+* Increases the value of the missed property
+* Removes a life from the scoreboard
+* Checks if player has remaining lives and ends game if player is out
+*/
+removeLife() {
+
+
+};
+/**
+* Displays game over message
+* @param {boolean} gameWon - Whether or not the user won the game
+*/
+gameOver(gameWon) {
+
+
+};
+
+   handleInteraction() {
 
    }
 
