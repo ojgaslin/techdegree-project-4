@@ -33,13 +33,13 @@
     * Checks if passed letter is in phrase
     * @param (string) letter - Letter to check
     */
-    checkLetter(letter) {
-      for(let i = 0, i < this.phrase.length; i++) {
-           if(i ===  ) {
+  //  checkLetter(letter) {
+  //    for(let j = 0, j < this.phrase.length; j++) {
+  //         if(j ===  ) {
 
-           }
-      }
-    }
+  //         }
+  //    }
+  //  }
     /**
 * Displays passed letter on screen after a match is found
 * @param (string) letter - Letter to display

@@ -12,12 +12,22 @@ window.onload = function(){
     game.startGame();
 });
 }
-var keyboardDivParent = document.querySelector("keyrow");
-keyboardDivParent.addEventListener("click", findLetterClicked, false );
+//keyboardDivParent.addEventListener("click", findLetterClicked, false );
 
-function findLetterClicked(e) {
-  if(e.target !== e.currentTarget) {
-    var clickedLetter = e.target.id;
-      }
-      e.stopPropagation();
-}
+//function findLetterClicked(e) {
+//  if(e.target !== e.currentTarget) {
+//    var clickedLetter = e.target.id;
+//      }
+//      e.stopPropagation();
+//}
+document.querySelectorAll('.key').forEach(item => {
+ item.addEventListener('click', event => {
+      game.handleInteraction();
+ })
+})
+
+  document.addEventListener('keydown', function(event) {
+    if(key.length === 1) {
+    const key = event.key;
+  }
+  });
