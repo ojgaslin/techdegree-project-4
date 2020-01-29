@@ -70,10 +70,11 @@ removeLife() {
 gameOver(gameWon) {
 
 
-};
+}
 
-   handleInteraction() {
-
+   handleInteraction(letter) {
+     console.log(this.activePhrase.checkLetter(letter));
+     console.log(this.activePhrase.showMatchedLetter(letter));
    }
 
  }

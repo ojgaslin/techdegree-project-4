@@ -16,7 +16,7 @@
            var li = document.createElement("li");
            li.innerHTML = this.phrase.charAt(i);
            //let letter = "<li>" + this.phrase.charAt(i) + "</li>";
-           console.log(li);
+           //console.log(li);
 //if/else statment, if li.innerHTML is equal to space, then class name space given
              if(li.innerHTML === " ") {
                li.className = "space";
@@ -33,18 +33,17 @@
     * Checks if passed letter is in phrase
     * @param (string) letter - Letter to check
     */
-  //  checkLetter(letter) {
-  //    for(let j = 0, j < this.phrase.length; j++) {
-  //         if(j ===  ) {
-
-  //         }
-  //    }
-  //  }
+  checkLetter(letter) {
+     if(this.phrase.indexOf(letter) > -1) {
+       return true;
+     }
+     return false;
+   }
     /**
 * Displays passed letter on screen after a match is found
 * @param (string) letter - Letter to display
 */
     showMatchedLetter(letter) {
-
+      document.querySelector("hide letter" + li.innerHTML).style.display = 'block';
     }
  }

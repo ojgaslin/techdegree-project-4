@@ -9,25 +9,19 @@ window.onload = function(){
   document.getElementById('btn__reset').addEventListener('click', function() {
 //used game variable to instantiate new Game object and called startGame method on new game object
     let game = new Game();
+    document.querySelectorAll('.key').forEach(item => {
+     item.addEventListener('click', event => {
+          game.handleInteraction(event.target.textContent);
+          //console.log(event.target.textContent);
+     })
+    })
+  //  document.addEventListener('keydown', function(event) {
+  //    var key = event.keyCode;
+  //    if(key.length === 1) {
+  //    const key = event.key;
+//    }
+//    });
+
     game.startGame();
 });
 }
-//keyboardDivParent.addEventListener("click", findLetterClicked, false );
-
-//function findLetterClicked(e) {
-//  if(e.target !== e.currentTarget) {
-//    var clickedLetter = e.target.id;
-//      }
-//      e.stopPropagation();
-//}
-document.querySelectorAll('.key').forEach(item => {
- item.addEventListener('click', event => {
-      game.handleInteraction();
- })
-})
-
-  document.addEventListener('keydown', function(event) {
-    if(key.length === 1) {
-    const key = event.key;
-  }
-  });
