@@ -44,6 +44,17 @@
 * @param (string) letter - Letter to display
 */
     showMatchedLetter(letter) {
-      document.querySelector("hide letter" + li.innerHTML).style.display = 'block';
+      //variable liElements holds node list array of the li elements and their properties
+      var liElements = document.querySelectorAll('#phrase li');
+      console.log(liElements);
+      //loop iterating through array, i being number of loops
+      for(var i = 0; i < liElements.length; i++) {
+
+          if(liElements[i] === letter) {
+
+          } else {
+
+          }
+      }
     }
  }
