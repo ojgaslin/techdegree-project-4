@@ -46,6 +46,7 @@ class Game {
 		//this.activePhrase used again to call method in phrase.js file
 		this.activePhrase.addPhraseToDisplay();
 	}
+
 	/**
 	* Checks for winning move
 	* @return {boolean} True if game has been won, false if game wasn't
@@ -68,20 +69,26 @@ class Game {
 	 * Removes a life from the scoreboard
 	 * Checks if player has remaining lives and ends game if player is out
 	 */
-	// removeLife() {
-	// //     if(checkLetter(letter) === false) {
-	// //
-	// //     }
-	// //
-	// // };
+	removeLife(letter) {
+	     if(this.activePhrase.checkLetter(event.target.textContent) === false && this.missed < 4) {
+            this.missed += 1;
+            document.getElementById("#scoreboard").removeChild(li);
+	     } else if(this.activePhrase.checkLetter(letter) === false && this.missed === 4) {
+            gameOver(gameWon);
+       }
+
+	 };
 	// /**
 	//* Displays game over message
 	//* @param {boolean} gameWon - Whether or not the user won the game
 	//*/
-	gameOver(gameWon) {}
+	gameOver(gameWon) {
+
+  }
 	handleInteraction(letter) {
 		console.log(this.activePhrase.checkLetter(letter));
 		console.log(this.activePhrase.showMatchedLetter(letter));
     console.log(this.checkForWin());
+    console.log(this.removeLife());
 	}
 }
