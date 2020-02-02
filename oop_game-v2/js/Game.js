@@ -72,7 +72,8 @@ class Game {
 	removeLife(letter) {
 	     if(this.activePhrase.checkLetter(event.target.textContent) === false && this.missed < 4) {
             this.missed += 1;
-            document.getElementById("#scoreboard").removeChild(li);
+            var ol = document.getElementById("scoreboard").firstElementChild;
+            ol.removeChild(ol.firstElementChild);
 	     } else if(this.activePhrase.checkLetter(letter) === false && this.missed === 4) {
             gameOver(gameWon);
        }
