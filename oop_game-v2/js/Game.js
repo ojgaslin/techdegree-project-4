@@ -70,26 +70,44 @@ class Game {
 	 * Checks if player has remaining lives and ends game if player is out
 	 */
 	removeLife(letter) {
-	     if(this.activePhrase.checkLetter(event.target.textContent) === false && this.missed < 4) {
-            this.missed += 1;
-            var ol = document.getElementById("scoreboard").firstElementChild;
-            ol.removeChild(ol.firstElementChild);
-	     } else if(this.activePhrase.checkLetter(letter) === false && this.missed === 4) {
-            gameOver(gameWon);
+    this.missed += 1;
+	     if(this.missed < 5) {
+          var ol = document.getElementById("scoreboard").firstElementChild;
+          ol.removeChild(ol.firstElementChild);
+	     } else {
+         this.gameOver(false);
        }
-
 	 };
 	// /**
 	//* Displays game over message
 	//* @param {boolean} gameWon - Whether or not the user won the game
 	//*/
 	gameOver(gameWon) {
-
+    var messageElement = document.getElementById("game-over-message");
+    var overlayElement = document.getElementById('overlay');
+    overlayElement.style.display = 'block';
+    if(gameWon){
+    //messageElement.style.display = 'block';
+    messageElement.innerHTML = "Great Job!";
+    overlayElement.style.backgroundColor = '#7BCE85';
+  }else {
+    //messageElement.style.display = 'block';
+    messageElement.innerHTML = "Sorry better luck next time!";
+    //console.log(messageElement);
+    overlayElement.style.backgroundColor = '#FA8072';
   }
-	handleInteraction(letter) {
-		console.log(this.activePhrase.checkLetter(letter));
-		console.log(this.activePhrase.showMatchedLetter(letter));
-    console.log(this.checkForWin());
-    console.log(this.removeLife());
+  }
+	handleInteraction(button) {
+    var letter = button.target;
+		//console.log(this.activePhrase.checkLetter(letter));
+    if(this.activePhrase.checkLetter(letter)){
+      
+      this.activePhrase.showMatchedLetter(letter);
+      if(this.checkForWin()){
+        this.gameOver(true);
+      }
+    }else{
+      this.removeLife();
+    }
 	}
 }

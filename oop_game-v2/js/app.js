@@ -16,7 +16,8 @@ window.onload = function() {
 			document.querySelectorAll('.key')
 				.forEach(item => {
 					item.addEventListener('click', event => {
-						game.handleInteraction(event.target.textContent);
+						game.handleInteraction(event.target);
+            console.log(event.target.textContent);
 						//console.log(event.target.textContent);
 					})
 				})
