@@ -110,6 +110,8 @@ class Game {
       }
     }else{
       this.removeLife();
+      let wrongLetter = document.getElementsByTagName('button').innerHTML(event.target.textContent);
+      wrongLetter.className = 'wrong';
     }
 	}
 }
