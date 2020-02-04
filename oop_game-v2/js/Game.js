@@ -102,7 +102,8 @@ class Game {
 		//console.log(this.activePhrase.checkLetter(letter));
     if(this.activePhrase.checkLetter(letter)){
       let buttonType = getElementsByTagName('button').innerHTML(event.target.textContent);
-      document.getElementById('qwerty').buttonType.disabled = "true";
+      let div = document.getElementById('qwerty').document.getElementsByClassName('keyrow');
+      div.buttonType.disabled = "true";
       this.activePhrase.showMatchedLetter(letter);
       if(this.checkForWin()){
         this.gameOver(true);
