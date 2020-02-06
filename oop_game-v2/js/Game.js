@@ -88,30 +88,34 @@ class Game {
     overlayElement.style.display = 'block';
     if(gameWon){
     //messageElement.style.display = 'block';
+    messageElement.className += 'win';
     messageElement.innerHTML = "Great Job!";
+		var image = document.getElementsByClassName('start')[0];
+		image.style.backgroundImage = 'none';
     overlayElement.style.backgroundColor = '#7BCE85';
   }else {
     //messageElement.style.display = 'block';
+    messageElement.className += 'lose';
     messageElement.innerHTML = "Sorry better luck next time!";
+		var image = document.getElementsByClassName('start')[0];
+		image.style.backgroundImage = 'none';
     //console.log(messageElement);
-    overlayElement.style.backgroundColor = '#FA8072';
+    overlayElement.style.backgroundColor = '#f5785f';
   }
   }
 	handleInteraction(button) {
-    var letter = button.target;
+    var letter = button.textContent;
 		//console.log(this.activePhrase.checkLetter(letter));
+    button.disabled = 'true';
     if(this.activePhrase.checkLetter(letter)){
-      let buttonType = getElementsByTagName('button').innerHTML(event.target.textContent);
-      let div = document.getElementById('qwerty').document.getElementsByClassName('keyrow');
-      div.buttonType.disabled = "true";
       this.activePhrase.showMatchedLetter(letter);
+			button.classList.add('chosen');
       if(this.checkForWin()){
         this.gameOver(true);
       }
     }else{
       this.removeLife();
-      let wrongLetter = document.getElementsByTagName('button').innerHTML(event.target.textContent);
-      wrongLetter.className = 'wrong';
+      button.classList.add('wrong');
     }
 	}
 }

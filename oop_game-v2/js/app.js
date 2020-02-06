@@ -17,16 +17,20 @@ window.onload = function() {
 				.forEach(item => {
 					item.addEventListener('click', event => {
 						game.handleInteraction(event.target);
-            console.log(event.target.textContent);
+            //console.log(event.target.textContent);
 						//console.log(event.target.textContent);
 					})
 				})
-			//  document.addEventListener('keydown', function(event) {
-			//    var key = event.keyCode;
-			//    if(key.length === 1) {
-			//    const key = event.key;
-			//    }
-			//    });
+			document.addEventListener('keyup', (event) => {
+				console.log('event');
+				console.log(event);
+				document.querySelectorAll('.key').forEach(
+					item => {if(event.key.toLowerCase() == item.innerHTML){
+						item.click();
+					}}
+				)
+			})
+
 			game.startGame();
 		});
 }
