@@ -25,11 +25,11 @@ class Game {
 	 */
 	//method create phrases contains variable phrase which holds the arrays each with new Phrase object
 	createPhrases() {
-		var phrase = [new Phrase("Looks like we got another mystery on our hands"),
-					  new Phrase("Would you do it for a Scooby Snack"),
-					  new Phrase("What would you do for a Klondike bar"),
-					  new Phrase("The best time to wear a striped sweater is all the time"),
-					  new Phrase("No soup for you")];
+		var phrase = [new Phrase("All in due time"),
+					  new Phrase("Just scratching the surface"),
+					  new Phrase("Cute as a button"),
+					  new Phrase("Going against the grain"),
+					  new Phrase("Let sleeping dogs lie")];
 		//var phrase = [];
 		//phrase.push(new Phrase("Looks like we have got another mystery on our hands"));
 		return phrase;
@@ -72,8 +72,9 @@ class Game {
 	removeLife(letter) {
     this.missed += 1;
 	     if(this.missed < 5) {
-          var ol = document.getElementById("scoreboard").firstElementChild;
-          ol.removeChild(ol.firstElementChild);
+        let listItems = document.getElementsByClassName("tries");
+				console.log(listItems)
+				listItems[5 - this.missed].firstElementChild.src = "images/lostHeart.png";
 	     } else {
          this.gameOver(false);
        }

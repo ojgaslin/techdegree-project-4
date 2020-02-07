@@ -23,7 +23,7 @@ window.onload = function() {
 				})
 			document.addEventListener('keyup', (event) => {
 				console.log('event');
-				console.log(event);
+				console.log(document.querySelectorAll('.key'));
 				document.querySelectorAll('.key').forEach(
 					item => {if(event.key.toLowerCase() == item.innerHTML){
 						item.click();
