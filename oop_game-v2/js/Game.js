@@ -28,7 +28,7 @@ class Game {
 		var phrase = [new Phrase("All in due time"),
 					  new Phrase("Just scratching the surface"),
 					  new Phrase("Cute as a button"),
-					  new Phrase("Going against the grain"),
+					  new Phrase("Anything is possible"),
 					  new Phrase("Let sleeping dogs lie")];
 		//var phrase = [];
 		//phrase.push(new Phrase("Looks like we have got another mystery on our hands"));
@@ -54,8 +54,10 @@ class Game {
 	*/
 	checkForWin() {
     console.log(liElements);
+		  //select all list items which include letters of current phrase
       var liElements = document.querySelectorAll('#phrase li');
       var sentinal = true;
+			//for loop-if letter does not have class name show letter or space, win is false
 		  for(let i = 0; i < liElements.length; i++) {
 		    if(!(liElements[i].className == "show letter" || liElements[i].className == "space")) {
 		      sentinal = false;
@@ -118,5 +120,17 @@ class Game {
       this.removeLife();
       button.classList.add('wrong');
     }
+	}
+}
+resetGameboard(button) {
+	if(this.gameOver(true)) {
+		  let listItems = document.getElementsByClassName("tries")
+		  var liElements = document.querySelectorAll('#phrase li');
+			liElements.innerHTML = "";
+			button.disabled = 'false';
+      button.classList.remove('wrong');
+			button.classList.remove('chosen');
+			button.classList.add('key');
+      listItems.firstElementChild.src = "images/liveHeart.png";
 	}
 }
