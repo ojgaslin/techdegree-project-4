@@ -26,7 +26,7 @@ class Game {
 	//method create phrases contains variable phrase which holds the arrays each with new Phrase object
 	createPhrases() {
 		var phrase = [new Phrase("All in due time"),
-					  new Phrase("Just scratching the surface"),
+					  new Phrase("     Just scratching the surface"),
 					  new Phrase("Cute as a button"),
 					  new Phrase("Anything is possible"),
 					  new Phrase("Let sleeping dogs lie")];
@@ -121,16 +121,18 @@ class Game {
       button.classList.add('wrong');
     }
 	}
-}
+
 resetGameboard(button) {
 	if(this.gameOver(true)) {
-		  let listItems = document.getElementsByClassName("tries")
 		  var liElements = document.querySelectorAll('#phrase li');
-			liElements.innerHTML = "";
+			let listItems = document.getElementsByClassName("tries");
+			liElements.innerHTML = " ";
+			console.log(liElements.innerHTML);
 			button.disabled = 'false';
       button.classList.remove('wrong');
 			button.classList.remove('chosen');
 			button.classList.add('key');
-      listItems.firstElementChild.src = "images/liveHeart.png";
+      listItems[5 - this.missed].src = "images/liveHeart.png";
 	}
+}
 }

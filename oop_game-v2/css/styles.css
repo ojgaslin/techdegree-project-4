@@ -40,6 +40,7 @@ h2 {
   text-transform: uppercase;
   font-size: var(--font-size-large);
   margin: 0;
+  color: #fff;
 }
 
 h1 {
@@ -86,7 +87,7 @@ button {
 /* Title */
 
 .header {
-  color: #3a3f58;
+  background-image: url("../images/ocean.jpg");
 }
 
 
@@ -166,7 +167,7 @@ button {
   display: flex;
   flex-direction: column;
   position: fixed;
-  color: #FFFFFF;
+  background-image: url("../images/shattered-island.gif");
   justify-content: center;
   top: 0;
   bottom: 0;
@@ -180,7 +181,7 @@ button {
 }
 
 .start {
-  background-image: "images/ocean.jpg";
+  background-image: url("../images/shattered-island.gif");
 }
 
 .start a {

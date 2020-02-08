@@ -13,6 +13,7 @@ window.onload = function() {
 		.addEventListener('click', function() {
 			//used game variable to instantiate new Game object and called startGame
       //method on new game object
+			resetGameboard(event.target);
 			document.querySelectorAll('.key')
 				.forEach(item => {
 					item.addEventListener('click', event => {
