@@ -114,25 +114,32 @@ class Game {
       this.activePhrase.showMatchedLetter(letter);
 			button.classList.add('chosen');
       if(this.checkForWin()){
-        this.gameOver(true);
+        this.gameOver();
       }
-    }else{
+    }else {
       this.removeLife();
       button.classList.add('wrong');
     }
 	}
 
 resetGameboard(button) {
-	if(this.gameOver(true)) {
-		  var liElements = document.querySelectorAll('#phrase li');
+	console.log('Hello')
+	if(this.gameOver()) {
+		  var liElements = document.querySelectorAll('#phrase ul');
 			let listItems = document.getElementsByClassName("tries");
 			liElements.innerHTML = " ";
 			console.log(liElements.innerHTML);
 			button.disabled = 'false';
-      button.classList.remove('wrong');
-			button.classList.remove('chosen');
-			button.classList.add('key');
-      listItems[5 - this.missed].src = "images/liveHeart.png";
+			if(className === 'wrong' || className === 'chosen') {
+      element.classList.remove("wrong");
+			element.classList.remove("chosen");
+			element.classList.add('key');
+		}
+			element.classList.add('key');
+			this.missed = 0;
+			for(listItems.length) {
+      listItems.src = "images/liveHeart.png";
+		}
 	}
 }
 }

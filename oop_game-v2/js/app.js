@@ -2,18 +2,18 @@
  * Project 4 - OOP Game App
  * app.js */
 //DOM fully loaded before execution
-
+//create game variable equal to nothing
 let game = 'null';
-game = new Game();
-window.onload = function() {
-	//create game variable equal to nothing
 
-	//event listener added on start button
+window.onload = function() {
+//event listener added on start button
 	document.getElementById('btn__reset')
 		.addEventListener('click', function() {
+			game = new Game();
+			game.resetGameboard();
+			game.startGame();
 			//used game variable to instantiate new Game object and called startGame
       //method on new game object
-			resetGameboard(event.target);
 			document.querySelectorAll('.key')
 				.forEach(item => {
 					item.addEventListener('click', event => {
@@ -22,9 +22,10 @@ window.onload = function() {
 						//console.log(event.target.textContent);
 					})
 				})
+			//keyup event listener for keyboard
 			document.addEventListener('keyup', (event) => {
-				console.log('event');
-				console.log(document.querySelectorAll('.key'));
+				//console.log('event');
+				//console.log(document.querySelectorAll('.key'));
 				document.querySelectorAll('.key').forEach(
 					item => {if(event.key.toLowerCase() == item.innerHTML){
 						item.click();
@@ -32,6 +33,6 @@ window.onload = function() {
 				)
 			})
 
-			game.startGame();
+
 		});
 }
