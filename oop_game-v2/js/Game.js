@@ -125,6 +125,7 @@ class Game {
 resetGameboard(button) {
 	console.log('Hello')
 	if(this.gameOver()) {
+		  this.missed = 0;
 		  var liElements = document.querySelectorAll('#phrase ul');
 			let listItems = document.getElementsByClassName("tries");
 			liElements.innerHTML = " ";
@@ -136,9 +137,8 @@ resetGameboard(button) {
 			element.classList.add('key');
 		}
 			element.classList.add('key');
-			this.missed = 0;
-			for(listItems.length) {
-      listItems.src = "images/liveHeart.png";
+			for(let i = 0; i < listItems.length; i++) {
+      listItems[i].src = "images/liveHeart.png";	
 		}
 	}
 }
