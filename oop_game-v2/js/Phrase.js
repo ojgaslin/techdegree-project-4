@@ -18,7 +18,6 @@ class Phrase {
 			var li = document.createElement("li");
 			li.innerHTML = this.phrase[i];
 			//let letter = "<li>" + this.phrase.charAt(i) + "</li>";
-			//console.log(this.phrase[i]);
 			//if/else statment, if li.innerHTML is equal to space, then class name space given
 			if (this.phrase[i] === " ") {
 				li.className = "space";
@@ -37,6 +36,7 @@ class Phrase {
 	 * @param (string) letter - Letter to check
 	 */
 	checkLetter(letter) {
+		//checks if parameter letter is in phrase, returns more than -1 if true, -1 if false
 		if (this.phrase.indexOf(letter) > -1) {
 			return true;
 		}
@@ -49,10 +49,8 @@ class Phrase {
 	showMatchedLetter(letter) {
 		//variable liElements holds node list array of the li elements and their properties
 		var liElements = document.querySelectorAll('#phrase li');
-		console.log(liElements[i]);
 		//loop iterating through array, i being number of loops
 		for (var i = 0; i < liElements.length; i++) {
-			console.log(liElements[i].innerHTML);
 			if (liElements[i].innerHTML === letter) {
 				liElements[i].className = "show letter";
 			}

@@ -23,6 +23,10 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+html {
+  background-image: url("../images/shattered-island.gif");
+}
+
 body {
   justify-content: space-evenly;
   flex-direction: column;
@@ -40,11 +44,12 @@ h2 {
   text-transform: uppercase;
   font-size: var(--font-size-large);
   margin: 0;
-  color: #fff;
+  color: #E5E5E5;
 }
 
 h1 {
   font-size: 30px;
+
 }
 
 button {
@@ -87,7 +92,7 @@ button {
 /* Title */
 
 .header {
-  background-image: url("../images/ocean.jpg");
+  background-color: '#FFFFFF';
 }
 
 
@@ -197,7 +202,7 @@ button {
 }
 
 .lose {
-  background-color: #f5785f;
+  background-color: #E5E5E5;
 }
 
 .lose a {
