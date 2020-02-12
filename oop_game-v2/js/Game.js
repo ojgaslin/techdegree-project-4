@@ -26,7 +26,7 @@ class Game {
 	//method create phrases contains variable phrase which holds the arrays each with new Phrase object
 	createPhrases() {
 		var phrase = [new Phrase("All in due time")
-			, new Phrase("     Just scratching the surface")
+			, new Phrase("What a ham")
 			, new Phrase("Cute as a button")
 			, new Phrase("Anything is possible")
 			, new Phrase("Let sleeping dogs lie")
