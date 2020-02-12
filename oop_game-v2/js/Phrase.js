@@ -3,7 +3,7 @@
  * Phrase.js */
 class Phrase {
 	//constructor for phrase class created and 'phrase' passed in representing the
-  //phrase the phrase object is representing and the random phrase is changed to all lowercase
+	//phrase the phrase object is representing and the random phrase is changed to all lowercase
 	constructor(phrase) {
 		this.phrase = phrase.toLowerCase();
 	}
@@ -11,8 +11,8 @@ class Phrase {
 	 * Display phrase on game board
 	 */
 	//add phrase to display method loops through the random phrase and the letters
-  //and spaces of phrases creates li and used '.innerHTML' to insert content for
-  //element being accessed by this.phrase[i]
+	//and spaces of phrases creates li and used '.innerHTML' to insert content for
+	//element being accessed by this.phrase[i]
 	addPhraseToDisplay() {
 		for (let i = 0; i < this.phrase.length; i++) {
 			var li = document.createElement("li");
