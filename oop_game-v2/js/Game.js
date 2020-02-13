@@ -105,6 +105,7 @@ class Game {
 			messageElement.className += 'lose';
 			messageElement.innerHTML = "Sorry better luck next time!";
 			messageElement.style.color = '#8A2BE2';
+			messageElement.style.backgroundImage = 'none';
 			var image = document.getElementsByClassName('start')[0];
 			document.getElementById('game-over-message')
 				.style.backgroundColor = '#000000';
