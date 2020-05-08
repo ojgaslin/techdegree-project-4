@@ -155,7 +155,7 @@ class Game {
 		}
 		//this for loop loops through lost heart elements and changes them back to live hearts
 		for (let i = 0; i < listItems.length; i++) {
-			listItems[i].firstElementChild.src = "images/liveHeart.png";
+			listItems[i].firstElementChild.src = "oop_game-v2/images/liveHeart.png";
 		}
 	}
 }
