@@ -76,7 +76,7 @@ class Game {
 		if (this.missed < 5) {
 			let listItems = document.getElementsByClassName("tries");
 			console.log(listItems)
-			listItems[5 - this.missed].firstElementChild.src = "images/lostHeart.png";
+			listItems[5 - this.missed].firstElementChild.src = "oop_game-v2/images/lostHeart.png";
 		} else {
 			this.gameOver(false);
 		}
@@ -97,9 +97,9 @@ class Game {
 			messageElement.innerHTML = "Great Job!";
 			messageElement.style.color = '#FFFFFF';
 			messageElement.style.backgroundColor = '#7BCE85';
-			messageElement.style.backgroundImage = "url('images/balloons.gif')";
+			messageElement.style.backgroundImage = "url('oop_game-v2/images/balloons.gif')";
 			overlayElement.style.backgroundColor = '#7BCE85';
-			overlayElement.style.backgroundImage = "url('images/balloons.gif')";
+			overlayElement.style.backgroundImage = "url('oop_game-v2/images/balloons.gif')";
 		} else {
 			//if game won is false, implement these content and style changes
 			messageElement.className += 'lose';
@@ -109,7 +109,7 @@ class Game {
 			var image = document.getElementsByClassName('start')[0];
 			document.getElementById('game-over-message')
 				.style.backgroundColor = '#000000';
-			overlayElement.style.backgroundImage = "url('images/skull.gif')";
+			overlayElement.style.backgroundImage = "url('oop_game-v2/images/skull.gif')";
 			overlayElement.style.backgroundColor = '#000000';
 		}
 	}
